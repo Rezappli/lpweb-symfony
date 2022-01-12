@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}{{ product.getName() }}{% endblock %}
+
+{% block javascripts %}
+            {#{{ encore_entry_script_tags('app') }}#}
+            <script language = "javascript" 
+      src = "https://code.jquery.com/jquery-2.2.4.min.js"></script> 
+   
+   <script language = "javascript">  
+   function addToCart(){
+        var request = new XMLHttpRequest();
+        request.open('GET', 'http://mathis.lpweb-lannion.fr:7780/cart/add/{{product.getId()}}');
+        request.addEventListener('load', function () {
+            if(request.status == 200){
+                $('#buttonAddCard').addClass('disabled');  
+                alert('L\'article {{product.getName()}} à bien été ajouté au panier');
+            } else if (request.status == 404) {
+                alert("Article introuvable");
+            }
+        });
+
+        request.send();
+   }
+        
+   </script> 
+    {% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="p-3">
+    <h1>{{ product.getName() }}</h1>
+    <p>{{ product.getDescription() }}</p>
+    <p>{{ product.getPrice() }}€</p>
+    <p>{{ product.getCreatedAt() |date('d/m/Y') }}</p>
+    <button id="buttonAddCard" onclick="addToCart()" class="btn btn-primary" >Ajouter au panier</button>
+</div>
+
+
+
+{% endblock %}
+
+
+
