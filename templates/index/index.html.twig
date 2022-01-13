@@ -12,19 +12,23 @@
     <div class="col-6">
         <h2 class="mb-4"> Produits les plus récents </h2>
         {% for product in recentProducts %}
-            <div class="card mt-2 mb-2 p-3">
-                <h4><a href='{{ path('product.show', {id : product.getId()}) }}'>{{ product.getName() }}</a></h4>
-                <p> Date d'ajout : {{ product.getCreatedAt()|date('d/m/Y') }}</p>
-            </div>
+            <a href='{{ path('product.show', {id : product.getId()}) }}' class="text-decoration-none">
+                <div class="card mt-2 mb-2 p-3">
+                    <h4>{{ product.getName() }}</h4>
+                    <p> Date d'ajout : {{ product.getCreatedAt()|date('d/m/Y') }}</p>
+                </div>
+            </a>
         {% endfor %}
     </div>
     <div class="col-6">
         <h2 class="mb-4"> Produits les moins chères </h2>
         {% for product in lessExpensiveProducts %}
-            <div class="card mt-2 mb-2 p-3">
-                <h4><a href='{{ path('product.show', {id : product.getId()}) }}'>{{ product.getName() }}</a></h4>
-                <p> Prix : {{ product.getPrice()}}</p>
-            </div>
+            <a href='{{ path('product.show', {id : product.getId()}) }}' class="text-decoration-none">
+                <div class="card mt-2 mb-2 p-3">
+                    <h4>{{ product.getName() }}</h4>
+                    <p> Prix : {{ product.getPrice()}}</p>
+                </div>
+            </a>
         {% endfor %}
     </div>
    

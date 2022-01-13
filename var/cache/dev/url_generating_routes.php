@@ -15,6 +15,7 @@ return [
     '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
+    'command' => [[], ['_controller' => 'App\\Controller\\CommandController::index'], [], [['text', '/command']], [], []],
     'index' => [[], ['_controller' => 'App\\Controller\\IndexController::index'], [], [['text', '/index']], [], []],
     'product' => [[], ['_controller' => 'App\\Controller\\ProductController::index'], [], [['text', '/product']], [], []],
     'index.index' => [[], ['_controller' => 'App\\Controller\\IndexController::index'], [], [['text', '/']], [], []],
@@ -23,4 +24,6 @@ return [
     'cart.index' => [[], ['_controller' => 'App\\Controller\\CartController::index'], [], [['text', '/cart']], [], []],
     'cart.add' => [['id'], ['_controller' => 'App\\Controller\\CartController::add'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/cart/add']], [], []],
     'cart.delete' => [['id'], ['_controller' => 'App\\Controller\\CartController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/cart/delete']], [], []],
+    'command.show' => [['id'], ['_controller' => 'App\\Controller\\CommandController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/command']], [], []],
+    'command.index' => [[], ['_controller' => 'App\\Controller\\CommandController::index'], [], [['text', '/command']], [], []],
 ];

@@ -88,46 +88,57 @@ class __TwigTemplate_0b767da5827fb6b6b839f7f8d9c2d9ccdffd5fb69018e1f0396b92c27b2
         echo "<style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    .card:hover{
+        cursor:default;
+    }
 </style>
 
     ";
-        // line 12
+        // line 15
         echo "<div class=\"p-3\">
     <div class=\"row\">
     ";
-        // line 14
+        // line 17
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 14, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 17, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
-            // line 15
-            echo "        <div class=\"col-6 \">
-        <h2><a href='";
-            // line 16
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product.show", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "getId", [], "method", false, false, false, 16)]), "html", null, true);
-            echo "'>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "getName", [], "method", false, false, false, 16), "html", null, true);
-            echo "</a></h2>
-        <p>";
-            // line 17
-            echo twig_escape_filter($this->env, twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "getDescription", [], "method", false, false, false, 17), 1, 300), "html", null, true);
-            echo "... <a href='";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product.show", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "getId", [], "method", false, false, false, 17)]), "html", null, true);
-            echo "'> Voir Plus</a> </p>
-        <p>";
             // line 18
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "getPrice", [], "method", false, false, false, 18), "html", null, true);
-            echo " €</p>
-        <p>";
-            // line 19
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "getCreatedAt", [], "method", false, false, false, 19), "d/m/Y"), "html", null, true);
+            echo "        <div class=\"col-6 p-4\">
+            
+                <div class=\"card p-4\">
+                    <div class=\"d-flex justify-content-center\"><img src=\"";
+            // line 21
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "getImg", [], "method", false, false, false, 21), "html", null, true);
+            echo "\" width=\"300\" height=\"300\"/></div>
+                    <br>
+                    <h2><a href='";
+            // line 23
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product.show", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "getId", [], "method", false, false, false, 23)]), "html", null, true);
+            echo "' class=\"text-decoration-none\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "getName", [], "method", false, false, false, 23), "html", null, true);
+            echo "</a></h2>
+                    <h4>";
+            // line 24
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "getPrice", [], "method", false, false, false, 24), "html", null, true);
+            echo " €</h4>
+                    <p>";
+            // line 25
+            echo twig_escape_filter($this->env, twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "getDescription", [], "method", false, false, false, 25), 1, 300), "html", null, true);
+            echo "... <a href='";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product.show", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "getId", [], "method", false, false, false, 25)]), "html", null, true);
+            echo "'> Voir Plus</a> </p>
+                    <p>Date d'ajout : ";
+            // line 26
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "getCreatedAt", [], "method", false, false, false, 26), "d/m/Y"), "html", null, true);
             echo "</p>
+                </div>
         </div>
     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 22
+        // line 30
         echo "</div>
 
 
@@ -152,7 +163,7 @@ class __TwigTemplate_0b767da5827fb6b6b839f7f8d9c2d9ccdffd5fb69018e1f0396b92c27b2
 
     public function getDebugInfo()
     {
-        return array (  131 => 22,  122 => 19,  118 => 18,  112 => 17,  106 => 16,  103 => 15,  99 => 14,  95 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  142 => 30,  132 => 26,  126 => 25,  122 => 24,  116 => 23,  111 => 21,  106 => 18,  102 => 17,  98 => 15,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -165,17 +176,25 @@ class __TwigTemplate_0b767da5827fb6b6b839f7f8d9c2d9ccdffd5fb69018e1f0396b92c27b2
 <style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    .card:hover{
+        cursor:default;
+    }
 </style>
 
     {# <a class=\"btn btn-primary nav-link\" href=\"{{ path('article.create') }}\">Créer un article</a> #}
 <div class=\"p-3\">
     <div class=\"row\">
     {% for product in products %}
-        <div class=\"col-6 \">
-        <h2><a href='{{ path('product.show', {id : product.getId()}) }}'>{{ product.getName() }}</a></h2>
-        <p>{{ product.getDescription()|slice(1, 300) }}... <a href='{{ path('product.show', {id : product.getId()}) }}'> Voir Plus</a> </p>
-        <p>{{ product.getPrice()}} €</p>
-        <p>{{ product.getCreatedAt()|date('d/m/Y') }}</p>
+        <div class=\"col-6 p-4\">
+            
+                <div class=\"card p-4\">
+                    <div class=\"d-flex justify-content-center\"><img src=\"{{product.getImg()}}\" width=\"300\" height=\"300\"/></div>
+                    <br>
+                    <h2><a href='{{ path('product.show', {id : product.getId()}) }}' class=\"text-decoration-none\">{{ product.getName() }}</a></h2>
+                    <h4>{{ product.getPrice()}} €</h4>
+                    <p>{{ product.getDescription()|slice(1, 300) }}... <a href='{{ path('product.show', {id : product.getId()}) }}'> Voir Plus</a> </p>
+                    <p>Date d'ajout : {{ product.getCreatedAt()|date('d/m/Y') }}</p>
+                </div>
         </div>
     {% endfor %}
 </div>

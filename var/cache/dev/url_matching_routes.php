@@ -13,6 +13,10 @@ return [
         '/_profiler/search_bar' => [[['_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'], null, null, null, false, false, null]],
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
+        '/command' => [
+            [['_route' => 'command', '_controller' => 'App\\Controller\\CommandController::index'], null, null, null, false, false, null],
+            [['_route' => 'command.index', '_controller' => 'App\\Controller\\CommandController::index'], null, null, null, false, false, null],
+        ],
         '/index' => [[['_route' => 'index', '_controller' => 'App\\Controller\\IndexController::index'], null, null, null, false, false, null]],
         '/product' => [
             [['_route' => 'product', '_controller' => 'App\\Controller\\ProductController::index'], null, null, null, false, false, null],
@@ -39,9 +43,12 @@ return [
                     .')'
                 .')'
                 .'|/product/([^/]++)(*:186)'
-                .'|/cart/(?'
-                    .'|add/([^/]++)(*:215)'
-                    .'|delete/([^/]++)(*:238)'
+                .'|/c(?'
+                    .'|art/(?'
+                        .'|add/([^/]++)(*:218)'
+                        .'|delete/([^/]++)(*:241)'
+                    .')'
+                    .'|ommand/([^/]++)(*:265)'
                 .')'
             .')/?$}sDu',
     ],
@@ -54,9 +61,10 @@ return [
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
         186 => [[['_route' => 'product.show', '_controller' => 'App\\Controller\\ProductController::show'], ['id'], null, null, false, true, null]],
-        215 => [[['_route' => 'cart.add', '_controller' => 'App\\Controller\\CartController::add'], ['id'], null, null, false, true, null]],
-        238 => [
-            [['_route' => 'cart.delete', '_controller' => 'App\\Controller\\CartController::delete'], ['id'], null, null, false, true, null],
+        218 => [[['_route' => 'cart.add', '_controller' => 'App\\Controller\\CartController::add'], ['id'], null, null, false, true, null]],
+        241 => [[['_route' => 'cart.delete', '_controller' => 'App\\Controller\\CartController::delete'], ['id'], null, null, false, true, null]],
+        265 => [
+            [['_route' => 'command.show', '_controller' => 'App\\Controller\\CommandController::show'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

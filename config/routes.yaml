@@ -25,3 +25,12 @@ cart.add:
 cart.delete:
     path: /cart/delete/{id} 
     controller: App\Controller\CartController::delete
+
+command.show:
+    path: /command/{id}
+    controller: App\Controller\CommandController::show
+    
+command.index:
+    path: /command
+    controller: App\Controller\CommandController::index
+

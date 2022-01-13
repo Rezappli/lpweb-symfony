@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CommandController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    
+</style>
+
+<div>
+    <h1 class="m-4"> Commandes </h1>
+    <div>
+        {% for command in commands %}
+        <a href="{{ path('command.show', {id:command.getId()})}}" class="text-decoration-none">
+            <div class="card m-3 p-2 command"  >
+                <h4> ID : {{command.getId()}}</h4> 
+                <h4> Email : {{command.getEmail()}}</h4> 
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

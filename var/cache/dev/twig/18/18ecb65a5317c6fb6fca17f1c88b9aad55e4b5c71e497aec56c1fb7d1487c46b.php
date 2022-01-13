@@ -99,51 +99,55 @@ class __TwigTemplate_6ee7c85cf2b0ff7b528870d08c5755464fc5e3382e858ae88ade3f06706
         $context['_seq'] = twig_ensure_traversable((isset($context["recentProducts"]) || array_key_exists("recentProducts", $context) ? $context["recentProducts"] : (function () { throw new RuntimeError('Variable "recentProducts" does not exist.', 14, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
             // line 15
-            echo "            <div class=\"card mt-2 mb-2 p-3\">
-                <h4><a href='";
-            // line 16
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product.show", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "getId", [], "method", false, false, false, 16)]), "html", null, true);
-            echo "'>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "getName", [], "method", false, false, false, 16), "html", null, true);
-            echo "</a></h4>
-                <p> Date d'ajout : ";
+            echo "            <a href='";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product.show", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "getId", [], "method", false, false, false, 15)]), "html", null, true);
+            echo "' class=\"text-decoration-none\">
+                <div class=\"card mt-2 mb-2 p-3\">
+                    <h4>";
             // line 17
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "getCreatedAt", [], "method", false, false, false, 17), "d/m/Y"), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "getName", [], "method", false, false, false, 17), "html", null, true);
+            echo "</h4>
+                    <p> Date d'ajout : ";
+            // line 18
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "getCreatedAt", [], "method", false, false, false, 18), "d/m/Y"), "html", null, true);
             echo "</p>
-            </div>
+                </div>
+            </a>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 20
+        // line 22
         echo "    </div>
     <div class=\"col-6\">
         <h2 class=\"mb-4\"> Produits les moins chères </h2>
         ";
-        // line 23
+        // line 25
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["lessExpensiveProducts"]) || array_key_exists("lessExpensiveProducts", $context) ? $context["lessExpensiveProducts"] : (function () { throw new RuntimeError('Variable "lessExpensiveProducts" does not exist.', 23, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["lessExpensiveProducts"]) || array_key_exists("lessExpensiveProducts", $context) ? $context["lessExpensiveProducts"] : (function () { throw new RuntimeError('Variable "lessExpensiveProducts" does not exist.', 25, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
-            // line 24
-            echo "            <div class=\"card mt-2 mb-2 p-3\">
-                <h4><a href='";
-            // line 25
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product.show", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "getId", [], "method", false, false, false, 25)]), "html", null, true);
-            echo "'>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "getName", [], "method", false, false, false, 25), "html", null, true);
-            echo "</a></h4>
-                <p> Prix : ";
             // line 26
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "getPrice", [], "method", false, false, false, 26), "html", null, true);
+            echo "            <a href='";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product.show", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "getId", [], "method", false, false, false, 26)]), "html", null, true);
+            echo "' class=\"text-decoration-none\">
+                <div class=\"card mt-2 mb-2 p-3\">
+                    <h4>";
+            // line 28
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "getName", [], "method", false, false, false, 28), "html", null, true);
+            echo "</h4>
+                    <p> Prix : ";
+            // line 29
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "getPrice", [], "method", false, false, false, 29), "html", null, true);
             echo "</p>
-            </div>
+                </div>
+            </a>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 29
+        // line 33
         echo "    </div>
    
 </div>
@@ -168,7 +172,7 @@ class __TwigTemplate_6ee7c85cf2b0ff7b528870d08c5755464fc5e3382e858ae88ade3f06706
 
     public function getDebugInfo()
     {
-        return array (  147 => 29,  138 => 26,  132 => 25,  129 => 24,  125 => 23,  120 => 20,  111 => 17,  105 => 16,  102 => 15,  98 => 14,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  151 => 33,  141 => 29,  137 => 28,  131 => 26,  127 => 25,  122 => 22,  112 => 18,  108 => 17,  102 => 15,  98 => 14,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -187,19 +191,23 @@ class __TwigTemplate_6ee7c85cf2b0ff7b528870d08c5755464fc5e3382e858ae88ade3f06706
     <div class=\"col-6\">
         <h2 class=\"mb-4\"> Produits les plus récents </h2>
         {% for product in recentProducts %}
-            <div class=\"card mt-2 mb-2 p-3\">
-                <h4><a href='{{ path('product.show', {id : product.getId()}) }}'>{{ product.getName() }}</a></h4>
-                <p> Date d'ajout : {{ product.getCreatedAt()|date('d/m/Y') }}</p>
-            </div>
+            <a href='{{ path('product.show', {id : product.getId()}) }}' class=\"text-decoration-none\">
+                <div class=\"card mt-2 mb-2 p-3\">
+                    <h4>{{ product.getName() }}</h4>
+                    <p> Date d'ajout : {{ product.getCreatedAt()|date('d/m/Y') }}</p>
+                </div>
+            </a>
         {% endfor %}
     </div>
     <div class=\"col-6\">
         <h2 class=\"mb-4\"> Produits les moins chères </h2>
         {% for product in lessExpensiveProducts %}
-            <div class=\"card mt-2 mb-2 p-3\">
-                <h4><a href='{{ path('product.show', {id : product.getId()}) }}'>{{ product.getName() }}</a></h4>
-                <p> Prix : {{ product.getPrice()}}</p>
-            </div>
+            <a href='{{ path('product.show', {id : product.getId()}) }}' class=\"text-decoration-none\">
+                <div class=\"card mt-2 mb-2 p-3\">
+                    <h4>{{ product.getName() }}</h4>
+                    <p> Prix : {{ product.getPrice()}}</p>
+                </div>
+            </a>
         {% endfor %}
     </div>
    

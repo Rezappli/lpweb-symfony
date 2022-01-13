@@ -23,6 +23,11 @@ class Product
     private $name;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $img;
+
+    /**
      * @ORM\Column(type="text")
      */
     private $description;
@@ -50,6 +55,18 @@ class Product
     public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function getImg(): ?string
+    {
+        return $this->img;
+    }
+
+    public function setImg(string $img): self
+    {
+        $this->img = $img;
 
         return $this;
     }

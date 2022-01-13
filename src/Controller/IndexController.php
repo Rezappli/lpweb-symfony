@@ -17,18 +17,18 @@ class IndexController extends AbstractController
     public function index(ProductRepository $productRepository): Response
     {
         $productRepository = $this->getDoctrine()->getRepository(Product::class);
-        $products = $productRepository->findAll();
 
-        $lessExpensiveProducts = [];
-        $recentProducts = [];
-        foreach ($products as $key => $product) {
-            array_push($lessExpensiveProducts,$product);
-            array_push($recentProducts,$product);
-        }
+        $lessExpensiveProducts = $productRepository->findAll();
+        $recentProducts = $productRepository->findAll();
+       
         
         usort($lessExpensiveProducts, function($a, $b)
         {
-            return strcmp($a->getPrice(), $b->getPrice());
+            if ($a->getPrice() == $b->getPrice()) {
+                return 0;
+            }
+
+            return $a->getPrice() < $b->getPrice() ? -1 : 1;
         });
         
         usort($recentProducts, function($a, $b)
@@ -40,7 +40,7 @@ class IndexController extends AbstractController
                 return 0;
             }
 
-            return $ad < $bd ? -1 : 1;
+            return $ad > $bd ? -1 : 1;
         });
         
         $lessExpensiveProducts = array_slice($lessExpensiveProducts, 0, 5);

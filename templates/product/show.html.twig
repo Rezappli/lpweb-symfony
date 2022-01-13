@@ -34,11 +34,23 @@
 </style>
 
 <div class="p-3">
-    <h1>{{ product.getName() }}</h1>
-    <p>{{ product.getDescription() }}</p>
-    <p>{{ product.getPrice() }}€</p>
-    <p>{{ product.getCreatedAt() |date('d/m/Y') }}</p>
-    <button id="buttonAddCard" onclick="addToCart()" class="btn btn-primary" >Ajouter au panier</button>
+    <div class="row p-3">
+        <img width="300" height="300" src="{{ product.getImg() }}"/>
+        <div class="col">
+        <h1>{{ product.getName() }}</h1>
+        <h4>{{ product.getPrice() }}€</h4>
+
+        <p>{{ product.getDescription() }}</p>
+        <p>Date d'ajout : {{ product.getCreatedAt() |date('d/m/Y') }}</p>
+        <div class="row">
+            <a href="{{path('product.index')}}"class="btn btn-secondary ml-3 mr-3" >Retour à la liste</a>
+            <button id="buttonAddCard" onclick="addToCart()" class="btn btn-primary" >Ajouter au panier</button>
+        </div>
+        
+        </div>
+
+    
+    </div>
 </div>
 
 

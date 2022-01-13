@@ -140,23 +140,41 @@ class __TwigTemplate_f96f40b45d50dec14591afcdb74d9ccde7a2027a53c7bce548658789f0f
 </style>
 
 <div class=\"p-3\">
-    <h1>";
-        // line 37
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 37, $this->source); })()), "getName", [], "method", false, false, false, 37), "html", null, true);
-        echo "</h1>
-    <p>";
+    <div class=\"row p-3\">
+        <img width=\"300\" height=\"300\" src=\"";
         // line 38
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 38, $this->source); })()), "getDescription", [], "method", false, false, false, 38), "html", null, true);
-        echo "</p>
-    <p>";
-        // line 39
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 39, $this->source); })()), "getPrice", [], "method", false, false, false, 39), "html", null, true);
-        echo "€</p>
-    <p>";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 38, $this->source); })()), "getImg", [], "method", false, false, false, 38), "html", null, true);
+        echo "\"/>
+        <div class=\"col\">
+        <h1>";
         // line 40
-        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 40, $this->source); })()), "getCreatedAt", [], "method", false, false, false, 40), "d/m/Y"), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 40, $this->source); })()), "getName", [], "method", false, false, false, 40), "html", null, true);
+        echo "</h1>
+        <h4>";
+        // line 41
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 41, $this->source); })()), "getPrice", [], "method", false, false, false, 41), "html", null, true);
+        echo "€</h4>
+
+        <p>";
+        // line 43
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 43, $this->source); })()), "getDescription", [], "method", false, false, false, 43), "html", null, true);
         echo "</p>
-    <button id=\"buttonAddCard\" onclick=\"addToCart()\" class=\"btn btn-primary\" >Ajouter au panier</button>
+        <p>Date d'ajout : ";
+        // line 44
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 44, $this->source); })()), "getCreatedAt", [], "method", false, false, false, 44), "d/m/Y"), "html", null, true);
+        echo "</p>
+        <div class=\"row\">
+            <a href=\"";
+        // line 46
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product.index");
+        echo "\"class=\"btn btn-secondary ml-3 mr-3\" >Retour à la liste</a>
+            <button id=\"buttonAddCard\" onclick=\"addToCart()\" class=\"btn btn-primary\" >Ajouter au panier</button>
+        </div>
+        
+        </div>
+
+    
+    </div>
 </div>
 
 
@@ -182,7 +200,7 @@ class __TwigTemplate_f96f40b45d50dec14591afcdb74d9ccde7a2027a53c7bce548658789f0f
 
     public function getDebugInfo()
     {
-        return array (  157 => 40,  153 => 39,  149 => 38,  145 => 37,  137 => 31,  127 => 30,  106 => 18,  99 => 14,  91 => 8,  89 => 7,  79 => 6,  60 => 4,  37 => 1,);
+        return array (  169 => 46,  164 => 44,  160 => 43,  155 => 41,  151 => 40,  146 => 38,  137 => 31,  127 => 30,  106 => 18,  99 => 14,  91 => 8,  89 => 7,  79 => 6,  60 => 4,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -223,11 +241,23 @@ class __TwigTemplate_f96f40b45d50dec14591afcdb74d9ccde7a2027a53c7bce548658789f0f
 </style>
 
 <div class=\"p-3\">
-    <h1>{{ product.getName() }}</h1>
-    <p>{{ product.getDescription() }}</p>
-    <p>{{ product.getPrice() }}€</p>
-    <p>{{ product.getCreatedAt() |date('d/m/Y') }}</p>
-    <button id=\"buttonAddCard\" onclick=\"addToCart()\" class=\"btn btn-primary\" >Ajouter au panier</button>
+    <div class=\"row p-3\">
+        <img width=\"300\" height=\"300\" src=\"{{ product.getImg() }}\"/>
+        <div class=\"col\">
+        <h1>{{ product.getName() }}</h1>
+        <h4>{{ product.getPrice() }}€</h4>
+
+        <p>{{ product.getDescription() }}</p>
+        <p>Date d'ajout : {{ product.getCreatedAt() |date('d/m/Y') }}</p>
+        <div class=\"row\">
+            <a href=\"{{path('product.index')}}\"class=\"btn btn-secondary ml-3 mr-3\" >Retour à la liste</a>
+            <button id=\"buttonAddCard\" onclick=\"addToCart()\" class=\"btn btn-primary\" >Ajouter au panier</button>
+        </div>
+        
+        </div>
+
+    
+    </div>
 </div>
 
 
