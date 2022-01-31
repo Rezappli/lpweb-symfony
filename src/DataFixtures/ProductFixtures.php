@@ -25,7 +25,7 @@ class ProductFixtures extends Fixture
                     ->setDescription($faker->text(200))
                     ->setPrice($faker->randomNumber(2))
                     ->setCreatedAt($faker->dateTimeThisYear())
-                    ->setImg("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.holoride.com%2Fnewsroom%2Fholoride-releases-cryptocurrency&psig=AOvVaw1hSrWG1csxsDV7HxK1eXMm&ust=1642168282270000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCMj3jtzvrvUCFQAAAAAdAAAAABAD");
+                    ->setImg("https://img2.storyblok.com/1420x0/smart/f/113424/1867x1200/5adec380a5/news-holoride-cryptocurrency.jpg");
             $manager->persist($product);
         }
     
